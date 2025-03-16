@@ -10,7 +10,6 @@ const rolePaths: Record<string, string> = {
   Staff: "/manage/s",
   Chef: "/manage/c",
 };
-// const homePath = "/";
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -68,5 +67,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/manage/:path*", "/login", "/guest/menu"],
+  matcher: ["/manage/:path*", "/login", "/guest/:path*"],
 };

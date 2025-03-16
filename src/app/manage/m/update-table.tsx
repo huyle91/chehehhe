@@ -77,7 +77,6 @@ export default function TableUpdate({
   }, [objectToEdit]);
 
   const onSubmit = async (data: TableItemsUdpateType) => {
-    // console.log("beffore", data);fdsafdsa
     try {
       if (id) {
         const newDataUpdate = {
@@ -88,7 +87,6 @@ export default function TableUpdate({
           status: data.status,
           token: changeToken ? GenerateUniqueHash() : objectToEdit.token,
         };
-        // console.log("beffore", newDataUpdate);
         const resUpdate = await updateTable.mutateAsync(newDataUpdate);
         if (resUpdate && resUpdate.payload) {
           setID(undefined);

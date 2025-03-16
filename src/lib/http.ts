@@ -146,6 +146,7 @@ const request = async <Response>(
   // Đảm bảo logic dưới đây chỉ chạy ở phía client (browser)
   if (isClient) {
     const normalizeUrl = normalizePath(url);
+    console.log("🚀 ~ normalizeUrl:", normalizeUrl);
     if (
       normalizeUrl === "api/auth/login" ||
       normalizeUrl === "api/auth/login/google" ||

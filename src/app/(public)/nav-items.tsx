@@ -68,6 +68,7 @@ const menuItems: {
 
 export default function NavItems({ className }: { className?: string }) {
   const { role, setRole } = useAppContext()
+  console.log("🚀 ~ role:", role)
   const logoutMutation = useLogoutMutation()
   const router = useRouter()
 
@@ -86,7 +87,7 @@ export default function NavItems({ className }: { className?: string }) {
   return (
     <>
       {menuItems.map((item) => {
-        // Trường hợp đăng nhập thì chỉ hiển thị menu đăng nhập
+        console.log("🚀 ~ {menuItems.map ~ menuItems:", menuItems)
         const isAuth = item.role && role && item.role.includes(role.name)
         // Trường hợp menu item có thể hiển thị dù cho đã đăng nhập hay chưa
         const canShow =
